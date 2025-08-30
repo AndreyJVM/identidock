@@ -5,7 +5,7 @@ services:
     ports:
       - "9090:9090"
     environment:
-      ENV: PROD
+      - ENV=PROD
     depends_on:
       - dnmonster
       - redis
