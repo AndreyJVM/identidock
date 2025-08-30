@@ -12,10 +12,6 @@ services:
 
   dnmonster:
     image: amouat/dnmonster:1.0
-    ports:
-      - "9091:8080"
 
   redis:
     image: redis:3.0
-    ports:
-      - "6379:6379"
