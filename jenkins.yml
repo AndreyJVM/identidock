@@ -1,20 +1,19 @@
-services:
-  identidock:
-    build: .
-    ports:
-      - "9090:9090"
-    environment:
-      ENV: PROD
-    depends_on:
-      - dnmonster
-      - redis
+identidock:
+  build: .
+  ports:
+    - "9090:9090"
+  environment:
+    - ENV=PROD
+  links:
+    - dnmonster
+    - redis
 
-  dnmonster:
-    image: amouat/dnmonster:1.0
-    ports:
-      - "9091:8080"
+dnmonster:
+  image: amouat/dnmonster:1.0
+  ports:
+    - "9091:8080"
 
-  redis:
-    image: redis:3.0
-    ports:
-      - "6379:6379"
+redis:
+  image: redis:3.0
+  ports:
+    - "6379:6379"
